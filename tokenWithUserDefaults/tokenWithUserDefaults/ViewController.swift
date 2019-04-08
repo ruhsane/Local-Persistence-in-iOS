@@ -13,6 +13,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        print(Defaults.saveToken("this is the token"))
+        print(Defaults.getToken())
+        Defaults.clearUserData()
+        print(Defaults.getToken())
     }
 
 

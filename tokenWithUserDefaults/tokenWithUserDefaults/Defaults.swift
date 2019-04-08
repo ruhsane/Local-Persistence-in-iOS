@@ -27,18 +27,18 @@ struct Defaults {
     }
     
     static var saveToken = { (token: String) in
-        UserDefaults.standard.set(token, forKey: "tokenKey")
+        UserDefaults.standard.set(token, forKey: tokenKey)
         //complete the method
     }
     
     static var getToken = { () -> Model in
         //complete the method
-        let token = UserDefaults.standard.string(forKey: "tokenKey") ?? ""
+        let token = UserDefaults.standard.string(forKey: tokenKey) ?? ""
         return Model(token: token)
     }
     
     static func clearUserData(){
         //complete the method using removeObject
-        UserDefaults.standard.removeObject(forKey: "tokenKey")
+        UserDefaults.standard.removeObject(forKey: tokenKey)
     }
 }
