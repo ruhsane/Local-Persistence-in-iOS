@@ -10,11 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let textField = UITextField()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.title = "Hello World"
+        
+        textField.placeholder = "placeholder"
+        view.addSubview(textField)
+        
     }
+    
 
     func vowelsInAString(string: String) -> Int {
         let vowels: [Character] = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]

@@ -55,4 +55,14 @@ class UnitTestTests: XCTestCase {
         let result = vc.makeTitle(string: "wtf is this")
         XCTAssertEqual(result, "Wtf Is This")
     }
+    
+    // test 4
+    func testPlaceholder() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateInitialViewController() as! ViewController
+        vc.viewDidLoad()
+        let ph = vc.textField.placeholder
+        XCTAssertEqual(ph, "placeholder")
+        
+    }
 }
