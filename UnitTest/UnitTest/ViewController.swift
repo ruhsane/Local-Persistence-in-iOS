@@ -26,7 +26,19 @@ class ViewController: UIViewController {
         }
         return numberOfVowels
     }
-
+    
+    func makeTitle(string: String) -> String {
+        let words = string.components(separatedBy: " ")
+        
+        var headline = ""
+        for var word in words {
+            let firstCharacter = word.remove(at:word.startIndex)
+            headline += "\(String(firstCharacter).uppercased())\(word) "
+        }
+        
+        headline.remove(at:headline.endIndex)
+        return headline
+    }
 
 }
 

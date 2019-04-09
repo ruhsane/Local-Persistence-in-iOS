@@ -48,4 +48,11 @@ class UnitTestTests: XCTestCase {
         XCTAssertEqual(result, 7)
     }
     
+    //Test 3
+    func testMakeTitle() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateInitialViewController() as! ViewController
+        let result = vc.makeTitle(string: "wtf is this")
+        XCTAssertEqual(result, "Wtf Is This ")
+    }
 }
