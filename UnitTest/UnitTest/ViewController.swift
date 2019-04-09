@@ -36,7 +36,7 @@ class ViewController: UIViewController {
             headline += "\(String(firstCharacter).uppercased())\(word) "
         }
         
-        headline.remove(at:headline.endIndex)
+        headline.remove(at:headline.index(before: headline.endIndex))
         return headline
     }
 
