@@ -40,4 +40,12 @@ class UnitTestTests: XCTestCase {
         XCTAssertEqual("Hello World", vc.title)
     }
     
+    // Test 2
+    func testVowelsInString() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateInitialViewController() as! ViewController
+        let result = vc.vowelsInAString(string: "This should have seven")
+        XCTAssertEqual(result, 7)
+    }
+    
 }
