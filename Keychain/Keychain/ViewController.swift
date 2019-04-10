@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class ViewController: UIViewController {
+
+    let keychain = KeychainSwift()
 
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
@@ -19,15 +22,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var deleteButton: UIButton!
     
     @IBAction func saveClicked(_ sender: Any) {
+        keychain.set(inputTextField.text ?? "", forKey: "my key")
+        outputTextView.text = keychain.get("my key")
     }
     
     @IBAction func deleteClicked(_ sender: Any) {
+        keychain.delete("my key")
+        outputTextView.text = keychain.get("my key")
+
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
     }
 
 
