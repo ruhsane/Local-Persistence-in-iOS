@@ -8,8 +8,21 @@
 
 import UIKit
 
+struct PropertyKey {
+    static let name = "name"
+    static let photo = "photo"
+    static let rating = "rating"
+}
 
-class Meal {
+class Meal: NSObject, NSCoding {
+    func encode(with aCoder: NSCoder) {
+        <#code#>
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        <#code#>
+    }
+    
     
     //MARK: Properties
     
