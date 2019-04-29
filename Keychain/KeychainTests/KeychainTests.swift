@@ -17,6 +17,8 @@ class KeychainTestingTests: XCTestCase {
     
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        keychain.set("value", forKey: "key")
+
     }
     
     override func tearDown() {
@@ -26,7 +28,6 @@ class KeychainTestingTests: XCTestCase {
     
     func testKeychainGet() {
         // Test if retrieving a value with Keychain works.
-        keychain.set("value", forKey: "key")
         let string = keychain.get("key")
         XCTAssertEqual(string, "value")
         
@@ -34,7 +35,6 @@ class KeychainTestingTests: XCTestCase {
     
     func testKeychainDelete() {
         // Test if deleting a value with Keychain works.
-        keychain.set("value", forKey: "key")
         keychain.delete("key")
         let get = keychain.get("key")
         XCTAssertEqual(get, nil)
@@ -43,10 +43,6 @@ class KeychainTestingTests: XCTestCase {
     
     func testKeychainUpdate() {
         // Test if updating a value with Keychain works, you will need an initial value and compare the new value with the old one.
-        keychain.set("value", forKey: "key")
-        let old = keychain.get("key")
-        XCTAssertEqual(old, "value")
-        
         keychain.set("new", forKey: "key")
         let new = keychain.get("key")
         XCTAssertEqual(new, "new")
