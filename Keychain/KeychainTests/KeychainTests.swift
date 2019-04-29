@@ -45,6 +45,7 @@ class KeychainTestingTests: XCTestCase {
         // Test if updating a value with Keychain works, you will need an initial value and compare the new value with the old one.
         keychain.set("new", forKey: "key")
         let new = keychain.get("key")
+        XCTAssertNotEqual(new, "value")
         XCTAssertEqual(new, "new")
 
     }
