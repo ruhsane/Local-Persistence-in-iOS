@@ -9,4 +9,9 @@ target 'Keychain' do
   # Pods for Keychain
   pod 'KeychainSwift', '~> 13.0'
 
+  target 'KeychainTests' do
+      inherit! :search_paths
+      # Pods for testing
+  end
+  
 end
