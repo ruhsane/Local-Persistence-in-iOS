@@ -87,9 +87,10 @@ class ToDoTests: XCTestCase {
     
     //TODO: Check that you get the correct amount of items after deleting one
     func test_remove_todo() {
-        
-      
-        
+        let list = manager.fetchAllItems()
+        let objID = list[0].objectID
+        manager.removeItem(objectID: objID)
+        test_fetch_all_todo()
     }
 
     func createMockItems() {
